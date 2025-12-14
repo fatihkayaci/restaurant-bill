@@ -1,7 +1,3 @@
-### 2. Ana Proje İçin README (Genel Vizyon)
-Bunu projenin **en dışındaki** ana klasöre **`README.md`** adıyla kaydet. Bu dosya projeye giren birine "Bu sistem nedir?" sorusunun cevabını verir.
-
-```markdown
 # 🥗 Restaurant Management System
 
 A full-stack solution for managing restaurant operations, including digital menus, order tracking, and billing. This repository contains both the backend API and the frontend user interface (coming soon).
