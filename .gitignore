@@ -1,0 +1,13 @@
+# General
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Node modules (Frontend geldiğinde lazım olacak)
+node_modules/
+npm-debug.log
