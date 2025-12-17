@@ -12,11 +12,16 @@ namespace RestaurantBill.WebAPI.Controllers
     {
         private readonly IGenericRepository<OrderItem> _orderItemRepo;
         private readonly IGenericRepository<Product> _productRepo;
+        private readonly IGenericRepository<Order> _orderRepo;
 
-        public OrderItemController(IGenericRepository<OrderItem> orderItemRepo, IGenericRepository<Product> productRepo)
+        public OrderItemController(
+            IGenericRepository<OrderItem> orderItemRepo, 
+            IGenericRepository<Product> productRepo, 
+            IGenericRepository<Order> orderRepo)
         {
             _orderItemRepo = orderItemRepo;
             _productRepo = productRepo;
+            _orderRepo = orderRepo;
         }
 
         [HttpGet]
@@ -36,6 +41,12 @@ namespace RestaurantBill.WebAPI.Controllers
                 return NotFound("Böyle bir ürün yok!");
             }
 
+            var order = await _orderRepo.GetByIdAsync(orderItemDto.OrderId);
+            if (order == null)
+            {
+                return NotFound("Böyle bir sipariş yok!");
+            }
+
             var orderItemEntity = new OrderItem
             {
                 OrderId = orderItemDto.OrderId,
@@ -47,6 +58,9 @@ namespace RestaurantBill.WebAPI.Controllers
             };
             await _orderItemRepo.AddAsync(orderItemEntity);
 
+            order.TotalAmount = order.TotalAmount + (orderItemEntity.UnitPrice * orderItemEntity.Quantity);
+            await _orderRepo.UpdateAsync(order);
+            
             return Ok(orderItemEntity);
         }
     }
