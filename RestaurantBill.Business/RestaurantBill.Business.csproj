@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestaurantBill.Core\RestaurantBill.Core.csproj" />
+    <ProjectReference Include="..\RestaurantBill.Infrastructure\RestaurantBill.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
