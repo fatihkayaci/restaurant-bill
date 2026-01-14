@@ -1,4 +1,4 @@
-namespace RestaurantBill.Infrastructure.DTOs.UserDtos;
+namespace RestaurantBill.Core.DTOs;
 
 public class CreateUserDto
 {

@@ -1,4 +1,4 @@
-namespace RestaurantBill.Infrastructure.DTOs.CategoryDtos;
+namespace RestaurantBill.Core.DTOs;
 
 public class CreateCategoryDto
 {

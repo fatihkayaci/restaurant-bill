@@ -1,5 +1,4 @@
-namespace RestaurantBill.Infrastructure.DTOs.OrderItemDtos;
-
+namespace RestaurantBill.Core.DTOs;
 public class CreateOrderItemDto
 {
     public int OrderId { get; set; }

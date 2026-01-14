@@ -1,5 +1,4 @@
-namespace RestaurantBill.Infrastructure.DTOs.UserDtos;
-
+namespace RestaurantBill.Core.DTOs;
 public class UserResponse
 {
     public int Id { get; set; }

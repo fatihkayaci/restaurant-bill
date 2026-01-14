@@ -1,4 +1,4 @@
-namespace RestaurantBill.Infrastructure.DTOs.OrderItemDtos;
+namespace RestaurantBill.Core.DTOs;
 
 public class OrderItemResponse
 {

@@ -1,6 +1,5 @@
-namespace RestaurantBill.Infrastructure.DTOs.CategoryDtos;
-
-public class UpdateCategoryDto
+namespace RestaurantBill.Core.DTOs;
+public class ResponseCategoryDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;

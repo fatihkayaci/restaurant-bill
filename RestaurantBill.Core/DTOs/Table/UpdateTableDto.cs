@@ -1,4 +1,4 @@
-namespace RestaurantBill.Infrastructure.DTOs.Table;
+namespace RestaurantBill.Core.DTOs;
 
 public class UpdateTableDto
 {

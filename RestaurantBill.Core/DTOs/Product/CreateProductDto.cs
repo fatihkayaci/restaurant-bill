@@ -1,5 +1,4 @@
-namespace RestaurantBill.Infrastructure.DTOs.Product;
-
+namespace RestaurantBill.Core.DTOs;
 public class CreateProductDto
 {
     public string Name { get; set; } = string.Empty;
