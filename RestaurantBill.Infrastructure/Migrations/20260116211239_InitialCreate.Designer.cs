@@ -12,7 +12,7 @@ using RestaurantBill.Infrastructure.Context;
 namespace RestaurantBill.Infrastructure.Migrations
 {
     [DbContext(typeof(RestaurantBillDbContext))]
-    [Migration("20260101133814_InitialCreate")]
+    [Migration("20260116211239_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

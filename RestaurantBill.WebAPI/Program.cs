@@ -39,7 +39,8 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<RestaurantBillDbContext>();
-        context.Database.Migrate(); 
+        context.Database.Migrate();
+        RestaurantBill.Infrastructure.Seeds.DefaultData.Seed(context);
     }
     catch (Exception ex)
     {
