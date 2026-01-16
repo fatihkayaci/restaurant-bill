@@ -19,6 +19,7 @@ builder.Services.AddDbContext<RestaurantBillDbContext>(options =>
 });
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ITableService, TableService>();
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddAutoMapper(typeof(MappingProfile));
