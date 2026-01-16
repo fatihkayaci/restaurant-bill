@@ -1,4 +1,3 @@
-using System.Linq;
 using RestaurantBill.Core;
 using RestaurantBill.Core.Interfaces;
 using RestaurantBill.Core.DTOs;
@@ -20,8 +19,8 @@ public class CategoryService : ICategoryService
         var category = _mapper.Map<Category>(dto);
         await _repository.AddAsync(category);
     }
-    
-    async Task<List<ResponseCategoryDto>> ICategoryService.GetAllAsync()
+
+    public async Task<List<ResponseCategoryDto>> GetAllAsync()
     {
         var entities = await _repository.GetAllAsync();
         return _mapper.Map<List<ResponseCategoryDto>>(entities);
