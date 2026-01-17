@@ -22,8 +22,8 @@ public class MappingProfile : Profile
 
         CreateMap<CreateOrderItemDto, OrderItem>();
         CreateMap<OrderItem, OrderItemResponse>();
-        
-        // İpucu: Eğer tersine de dönüşüm lazımsa .ReverseMap() ekleyebilirsin.
-        // CreateMap<Product, ProductUpdateDto>().ReverseMap();
+
+        CreateMap<CreateUserDto, User>();
+        CreateMap<User, UserResponse>();
     }
 }
