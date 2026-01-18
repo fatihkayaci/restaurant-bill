@@ -6,4 +6,5 @@ public interface IOrderService
     Task AddAsync(CreateOrderDto dto); 
     Task <List<OrderResponse>> GetAllAsync();
     Task <OrderResponse> GetOrderDetailsAsync(int id);
+    Task DeleteOrderDetailAsync(int id);
 }

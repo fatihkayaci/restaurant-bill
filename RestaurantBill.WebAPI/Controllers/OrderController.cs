@@ -34,5 +34,11 @@ namespace RestaurantBill.WebAPI.Controllers
             // Sonucu JSON olarak React'e dönüyoruz
             return Ok(response);
         }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteOrderItem(int id)
+        {
+            await _orderService.DeleteOrderDetailAsync(id);
+            return Ok("Order item başarıyla silindi");
+        }
     }
 }
