@@ -40,5 +40,12 @@ namespace RestaurantBill.WebAPI.Controllers
             await _orderService.DeleteOrderDetailAsync(id);
             return Ok("Order item başarıyla silindi");
         }
+        [HttpPost("close-order/{id}")]
+        public async Task<IActionResult> CloseOrder(int id)
+        {
+            await _orderService.CloseOrderAsync(id);
+            return Ok("işlem başarıyla tamamlandı.");
+        }
+        
     }
 }

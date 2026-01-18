@@ -7,4 +7,5 @@ public interface IOrderService
     Task <List<OrderResponse>> GetAllAsync();
     Task <OrderResponse> GetOrderDetailsAsync(int id);
     Task DeleteOrderDetailAsync(int id);
+    Task CloseOrderAsync(int id);
 }
