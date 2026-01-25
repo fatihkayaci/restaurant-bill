@@ -7,5 +7,6 @@ const apiClient = axios.create({
 
 export const getTables = () => apiClient.get('/Table');
 export const getProducts = () => apiClient.get('/Product');
+export const getCategories = () => apiClient.get('/Category');
 
 export default apiClient;
