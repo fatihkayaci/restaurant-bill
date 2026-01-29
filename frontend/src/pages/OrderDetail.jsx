@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getProducts, getCategories, getActiveOrder } from '../services/api'
+import { getProducts, getCategories, getActiveOrder, addOrderItem } from '../services/api'
 import './Style/OrderDetail.css';
 
 function OrderDetail() {
@@ -35,6 +35,28 @@ function OrderDetail() {
             .catch(err => console.error("Veri çekilemedi:", err));
     }, [id]);
 
+    const handleAddProduct = (productId) => {
+        if (!activeOrder) {
+            alert("Lütfen önce bir masa/sipariş seçin!");
+            return;
+        }
+        console.log(activeOrder);
+        const payload = {
+            orderId: activeOrder.id,
+            productId: productId,
+            quantity: 1
+        };
+
+        addOrderItem(payload)
+        .then(res => {
+            console.log("Ürün eklendi!");
+            getActiveOrder(id).then(res => setActiveOrder(res.data));
+        })
+        .catch(err => {
+            console.error("Ekleme hatası:", err);
+            alert("Ürün eklenemedi!");
+        });
+    };
     return (
         <div className="order-page">
         
@@ -49,7 +71,10 @@ function OrderDetail() {
                 
                 <div className="product-grid">
                 {products.map((product) => (
-                    <div key={product.id} className="product-card">
+                    <div 
+                        key={product.id} 
+                        className="product-card" 
+                        onClick={() => handleAddProduct(product.id)} >
                     <div className="product-img">
                         <img 
                             src={product.image || 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=200&auto=format&fit=crop'} 
